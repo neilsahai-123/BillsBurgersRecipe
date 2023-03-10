@@ -126,6 +126,11 @@ let order = OrderDetails(orderId: "1",
                           customerName: "Megan",
                           customerContactNo: "123456",
                           totalPrice: orderTotal,
+                          orderType: .delivery,
                           itemList: orderItemList)
 
-print(order.totalPrice)
+if order.orderType == .delivery {
+    print("Hello \(order.customerName), your total amount for order is \(orderTotal) and your order will be deliver in you address")
+} else {
+    print("Hello \(order.customerName), your total amount for order is \(orderTotal) and you can pick your order from nearest location")
+}
